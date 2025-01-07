@@ -1,0 +1,11 @@
+name: Commit emailer
+on: push
+
+jobs:
+  commit-emailer:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
