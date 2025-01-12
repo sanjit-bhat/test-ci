@@ -11,5 +11,5 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-      echo ${{ inputs.mailbot-from }}
+      - run: |
+          echo ${{ inputs.mailbot-from }}
