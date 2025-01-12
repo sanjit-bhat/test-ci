@@ -5,7 +5,7 @@ jobs:
   call-emailer:
     permissions:
       contents: read
-    uses: sanjit-bhat/github-mailbot/.github/workflows/emailer.yml@latest
+    uses: sanjit-bhat/github-mailbot/.github/workflows/emailer.yml@main
     with:
       host: smtp.gmail.com
       port: 587
