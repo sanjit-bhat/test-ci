@@ -1,15 +1,13 @@
-name: Test running commit emailer
+name: Testing commit emailer
 on: push
 
 jobs:
-  call-emailer:
-    runs-on: ubuntu-latest
-    env:
-      MAILBOT_PASSWORD: ${{ secrets.MAILBOT_PASSWORD }}
-    steps:
-      - uses: sanjit-bhat/github-mailbot@main
-        with:
-          host: smtp.gmail.com
-          port: 587
-          from: mit.pdos.mailbot@gmail.com
-          to: sanjit.bhat@gmail.com
+  call:
+    uses: sanjit-bhat/github-mailbot/.github/workflows/mailbot.yml@main
+    with:
+      host: smtp.gmail.com
+      port: 587
+      from: mit.pdos.mailbot@gmail.com
+      to: sanjit.bhat@gmail.com
+    secrets:
+      password: ${{ secrets.MAILBOT_PASSWORD }}
