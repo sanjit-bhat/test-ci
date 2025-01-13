@@ -10,4 +10,4 @@ jobs:
       from: mit.pdos.mailbot@gmail.com
       to: sanjit.bhat@gmail.com
     secrets:
-      password: ${{ secrets.MAILBOT_PASSWORD }}
+      password: supersecret
