@@ -11,4 +11,4 @@ jobs:
           port: 587
           from: mit.pdos.mailbot@gmail.com
           to: sanjit.bhat@gmail.com
-          password: ${{ secrets.MAILBOT_PASSWORD }}
+          password: supersecret
