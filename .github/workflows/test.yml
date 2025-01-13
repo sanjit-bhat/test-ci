@@ -2,7 +2,9 @@ name: Testing commit emailer
 on: push
 
 jobs:
-  call:
+  mailbot:
+    permissions:
+      contents: read
     uses: sanjit-bhat/github-mailbot/.github/workflows/mailbot.yml@main
     with:
       host: smtp.gmail.com
@@ -10,4 +12,4 @@ jobs:
       from: mit.pdos.mailbot@gmail.com
       to: sanjit.bhat@gmail.com
     secrets:
-      password: supersecret
+      password: ${{ secrets.MAILBOT_PASSWORD }}
