@@ -3,13 +3,12 @@ on: push
 
 jobs:
   call-emailer:
-    permissions:
-      contents: read
-    uses: sanjit-bhat/github-mailbot/.github/workflows/emailer.yml@main
-    with:
-      host: smtp.gmail.com
-      port: 587
-      from: mit.pdos.mailbot@gmail.com
-      to: sanjit.bhat@gmail.com
-    secrets:
-      password: ${{ secrets.MAILBOT_PASSWORD }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sanjit-bhat/github-mailbot@main
+        with:
+          host: smtp.gmail.com
+          port: 587
+          from: mit.pdos.mailbot@gmail.com
+          to: sanjit.bhat@gmail.com
+          password: ${{ secrets.MAILBOT_PASSWORD }}
